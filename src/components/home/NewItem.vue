@@ -1,5 +1,5 @@
 <script setup>
-import NewItemCard from '../NewItemCard.vue';
+import NewItemCard from "../NewItemCard.vue";
 </script>
 
 <template>
@@ -7,7 +7,9 @@ import NewItemCard from '../NewItemCard.vue';
     <h2 class="mb-4 text-xl font-medium md:mb-0 md:text-lg">New Items</h2>
     <div class="flex flex-wrap -mx-1 lg:-mx-4">
       <!-- NewItem Card -->
-      <NewItemCard />
+      <NewItemCard title="Mobile UI Kit" count="321" image="items-1.jpg" />
+      <NewItemCard title="Mobile UI Kit" count="321" image="items-2.jpg" />
+      <NewItemCard title="Mobile UI Kit" count="321" image="items-3.jpg" />
     </div>
   </div>
 </template>
