@@ -2,6 +2,7 @@
 import { RouterView } from "vue-router";
 import "@/assets/css/styles.css";
 import Navbar from "./components/layouts/Navbar.vue";
+
 </script>
 
 <template>
