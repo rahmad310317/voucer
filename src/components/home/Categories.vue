@@ -1,5 +1,5 @@
 <script setup>
-import CategoriesCard from "./../CategoriesCard.vue";
+import CategoryCard from "../CategoryCard.vue";
 import { ref } from "vue";
 
 const categories = ref([
@@ -15,7 +15,7 @@ const categories = ref([
     <div class="flex flex-wrap -mx-1 lg:-mx-4">
       <!-- top categories -->
 
-      <CategoriesCard
+      <CategoryCard
         v-for="category in categories"
         :key="category.id"
         :title="category.title"

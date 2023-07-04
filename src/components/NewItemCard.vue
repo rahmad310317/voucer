@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 defineProps({
   title: String,
   image: String,
-  count: Number,
+  subTitle: String,
 });
 </script>
 <template>
@@ -27,7 +27,7 @@ defineProps({
           </a>
         </h1>
         <span class="block text-sm font-light text-gray-500 no-underline">
-          {{ count }}
+          {{ subTitle }}
         </span>
       </header>
     </div>

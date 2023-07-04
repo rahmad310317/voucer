@@ -18,7 +18,7 @@ const NewItem = ref([
   {
     id: 3,
     title: "Banking Crypto",
-    subTitle: "Mobile UI Kit, Image: items-3.jpg",
+    subTitle: "Mobile UI Kit",
     Image: "items-3.jpg",
   },
 ]);
