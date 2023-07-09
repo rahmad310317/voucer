@@ -1,6 +1,5 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import Register from "../components/authentication/Register.vue";
+import FormRegisterVue from "../components/authentication/FormRegister.vue";
 </script>
 
 <template>
@@ -122,7 +121,7 @@ import Register from "../components/authentication/Register.vue";
               </div>
             </div>
             <!-- Register -->
-            <Register />
+            <FormRegisterVue />
           </div>
         </div>
       </div>
