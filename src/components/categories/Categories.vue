@@ -18,6 +18,7 @@ const categories = ref([
       <CategoryCard
         v-for="category in categories"
         :key="category.id"
+        :id="category.id"
         :title="category.title"
         :count="category.count"
         :image="category.Image" />
