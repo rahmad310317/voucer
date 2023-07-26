@@ -1,3 +1,9 @@
-<script setup></script>
+<script setup>
+import Categories from "@/components/categories/Categories.vue";
+</script>
 
-<template></template>
+<template>
+  <main>
+    <Categories />
+  </main>
+</template>
