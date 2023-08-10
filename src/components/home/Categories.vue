@@ -1,6 +1,7 @@
 <script setup>
 import CategoryCard from "../CategoryCard.vue";
-import { ref } from "vue";
+import axios from "axios";
+import { onMounted, ref } from "vue";
 
 const categories = ref([
   { id: 1, title: "Mobile UI Kit", count: 731, Image: "categories-1.jpg" },
@@ -8,6 +9,23 @@ const categories = ref([
   { id: 3, title: "icon Set", count: 83559, Image: "categories-3.jpg" },
   { id: 4, title: "Website Ui Kit", count: 4500, Image: "categories-4.jpg" },
 ]);
+
+// Call Api
+
+async function getCategoriesData() {
+  try {
+    const respone = await axios.get(
+      "https://zullkit-backend.buildwithangga.id/api/categories?limit=10000"
+    );
+    categories.value = respone.data.data.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+onMounted(() => {
+  getCategoriesData;
+});
 </script>
 <template>
   <div class="container px-4 mx-auto my-16 md:px-12" id="categories">
