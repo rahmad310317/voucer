@@ -1,4 +1,5 @@
 <script setup>
+import axios from "axios";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 
@@ -6,6 +7,20 @@ const form = ref({
   email: "",
   password: "",
 });
+
+async function login() {
+  try {
+    const response = await axios.post(
+      "https://zullkit-backend.buildwithangga.id/api/login",
+      {
+        email: form.value.email,
+        password: form.value.password,
+      },
+      localStorage.setItem("access_token", response.data.data.access_token),
+      localStorage.setItem("token_type", response.data.data.token_type)
+    );
+  } catch (error) {}
+}
 </script>
 <template>
   <form>

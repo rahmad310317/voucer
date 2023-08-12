@@ -12,15 +12,12 @@ const categories = ref([
 
 // Call Api
 
-async function getCategoriesData() {
-  try {
-    const respone = await axios.get(
-      "https://zullkit-backend.buildwithangga.id/api/categories?limit=10000"
-    );
-    categories.value = respone.data.data.data;
-  } catch (error) {
-    console.log(error);
-  }
+function getCategoriesData() {
+  axios
+    .get("https://zullkit-backend.buildwithangga.id/api/categories")
+    .then(function () {
+      console.log(respone);
+    });
 }
 
 onMounted(() => {
@@ -37,9 +34,9 @@ onMounted(() => {
         v-for="category in categories"
         :key="category.id"
         :id="category.id"
-        :title="category.title"
-        :count="category.count"
-        :image="category.Image" />
+        :title="category.name"
+        :count="category.products_count"
+        :image="category.thumbnails" />
     </div>
   </div>
 </template>

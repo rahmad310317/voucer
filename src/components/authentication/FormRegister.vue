@@ -1,12 +1,32 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import axios from "axios";
 
 const FormRegister = ref({
   name: "",
   email: "",
   password: "",
+  title: "member",
 });
+
+async function register() {
+  try {
+    const respone = await axios.post(
+      "https://e-commerce/v1/api/register",
+      {
+        name: FormRegister.value.name,
+        email: FormRegister.value.email,
+        password: FormRegister.value.password,
+        title: FormRegister.value.title,
+      },
+      localStorage.setItem("access_token", respone.data.data.access_token),
+      localStorage.setItem("token_type", respone.data.data.token_type)
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}
 </script>
 
 <template>
