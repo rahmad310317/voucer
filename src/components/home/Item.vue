@@ -1,27 +1,24 @@
 <script setup>
 import NewItemCard from "../NewItemCard.vue";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import axios from "axios";
 
-const NewItem = ref([
-  {
-    id: 1,
-    title: "Mobile UI Kit",
-    subTitle: "Mobile UI Kit",
-    Image: "items-1.jpg",
-  },
-  {
-    id: 2,
-    title: "Online Doctor Consultation",
-    subTitle: "Mobile UI Kit",
-    Image: "items-2.jpg",
-  },
-  {
-    id: 3,
-    title: "Banking Crypto",
-    subTitle: "Mobile UI Kit",
-    Image: "items-3.jpg",
-  },
-]);
+const NewItem = ref([]);
+
+async function getItemData() {
+  try {
+    const respone = await axios.post(
+      "https://zullkit-backend.belajarkoding.com/api/products"
+    );
+    const NewItem = respone.value.data.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+onMounted(() => {
+  getItemData();
+})
 </script>
 
 <template>

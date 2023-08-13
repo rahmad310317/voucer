@@ -3,25 +3,23 @@ import CategoryCard from "../CategoryCard.vue";
 import axios from "axios";
 import { onMounted, ref } from "vue";
 
-const categories = ref([
-  { id: 1, title: "Mobile UI Kit", count: 731, Image: "categories-1.jpg" },
-  { id: 2, title: "font", count: 657, Image: "categories-2.jpg" },
-  { id: 3, title: "icon Set", count: 83559, Image: "categories-3.jpg" },
-  { id: 4, title: "Website Ui Kit", count: 4500, Image: "categories-4.jpg" },
-]);
+const categories = ref([]);
 
 // Call Api
 
-function getCategoriesData() {
-  axios
-    .get("https://zullkit-backend.buildwithangga.id/api/categories")
-    .then(function () {
-      console.log(respone);
-    });
+async function getDataCategories() {
+  try {
+    const respone = await axios.get(
+      "https://zullkit-backend.belajarkoding.com/api/categories?limit=4"
+    );
+    const categories = respone.value.data.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 onMounted(() => {
-  getCategoriesData;
+  getDataCategories;
 });
 </script>
 <template>

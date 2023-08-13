@@ -13,7 +13,7 @@ const FormRegister = ref({
 async function register() {
   try {
     const respone = await axios.post(
-      "https://zullkit-backend.buildwithangga.id/api/register",
+      "https://zullkit-backend.belajarkoding.com/api/register",
       {
         name: FormRegister.value.name,
         email: FormRegister.value.email,

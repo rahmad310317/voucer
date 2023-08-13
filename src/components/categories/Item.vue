@@ -12,7 +12,7 @@ const route = useRoute();
 async function getItemsData() {
   try {
     const response = await axios.get(
-      "https://zullkit-backend.buildwithangga.id/api/categories?id=" +
+      "https://zullkit-backend.belajarkoding.com/api/categories?id=" +
         route.params.id +
         "&show_product=1"
     );
