@@ -5,6 +5,7 @@ import { useUserStore } from "@/stores/user";
 import Logo from "./Logo.vue";
 import NavigationLinks from "./NavigationLinks.vue";
 import UserInfo from "./UserInfo.vue";
+import AutButton from "./AutButton.vue";
 
 const userStore = useUserStore();
 const isLoggedIn = computed(() => userStore.isLoggedIn);
@@ -17,6 +18,7 @@ onMounted(() => {
 </script>
 <template>
   <Logo />
+  <UserInfo v-if="isLoggedIn" />
+  <AutButton v-else />
   <NavigationLinks />
-  <UserInfo />
 </template>
