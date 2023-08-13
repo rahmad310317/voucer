@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, computed } from "vue";
-import { useUserStore } from "../../stores/user";
+import { useUserStore } from "@/stores/user";
 
 import Logo from "./Logo.vue";
 import NavigationLinks from "./NavigationLinks.vue";
