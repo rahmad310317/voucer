@@ -19,7 +19,7 @@ async function getItemsData() {
     items.value = response.data.data.products;
     category.value = response.data.data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
