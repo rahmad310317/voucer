@@ -1,7 +1,12 @@
 <script setup>
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import axios from "axios";
+
+import { useUserStore } from "@/stores/user";
+
+const userStore = useUserStore();
+const router = useRouter();
 
 const FormRegister = ref({
   name: "",
@@ -19,10 +24,13 @@ async function register() {
         email: FormRegister.value.email,
         password: FormRegister.value.password,
         title: FormRegister.value.title,
-      },
-      localStorage.setItem("access_token", respone.data.data.access_token),
-      localStorage.setItem("token_type", respone.data.data.token_type)
+      }
     );
+    localStorage.setItem("acces_token", respone.data.data.access_token);
+    localStorage.setitem("token_type", respone.data.data.token_type);
+
+    userStore.fetchuser();
+    router.push("/login");
   } catch (error) {
     console.log(error);
   }

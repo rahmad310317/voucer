@@ -9,7 +9,6 @@ import AutButton from "./AutButton.vue";
 
 const userStore = useUserStore();
 const isLoggedIn = computed(() => userStore.isLoggedIn);
-const getUser = computed(() => userStore.getUser);
 const user = computed(() => userStore.user);
 
 onMounted(() => {
@@ -18,7 +17,7 @@ onMounted(() => {
 </script>
 <template>
   <Logo />
-  <UserInfo v-if="isLoggedIn" />
+  <UserInfo v-if="isLoggedIn" :user="user.data" />
   <AutButton v-else />
   <NavigationLinks />
 </template>

@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
 
-import ItemCard from "./../ItemCard.vue";
+import ItemCard from "./../NewItemCard.vue";
 
 const items = ref([]);
 const category = ref({});
