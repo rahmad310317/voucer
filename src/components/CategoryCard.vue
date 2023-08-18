@@ -27,6 +27,7 @@ defineProps({
             {{ title }}
           </RouterLink>
         </h1>
+        <!-- count items -->
         <span class="block text-sm font-light text-gray-500 no-underline">
           {{ count }} items
         </span>
